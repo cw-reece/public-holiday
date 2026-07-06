@@ -63,7 +63,7 @@ function App() {
                 onCountryChange={onCountryChange}
             />
             <div className={"holiday-list"}>
-                <ul>
+                <ul>    
                     {holidaysQuery.data.map((holiday) => (
                         <li key={holiday.id ?? holiday.startDate}>
                             {formatDate(holiday.startDate)} - {holiday.name?.[0]?.text ?? "Unnamed holiday"}
