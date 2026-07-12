@@ -14,9 +14,20 @@ The user comes to the site and it load the default country (Netherlands) and it 
 
 ## Data model
 
-I am not sure.
+Country:
+
+- isoCode: string
+- name: translated display name
+
+Holiday:
+
+- id: string, when available
+- startDate: YYYY-MM-DD string
+- name: translated display name
 
 ## Technical choices
+
+n/a
 
 ## Edge cases handled
 
@@ -25,8 +36,15 @@ choice has no holidays in the API.
 
 ## How to run ##
 
+npm run dev
+
 ## How to test
+
+n/a
 
 ## Known gaps
 
-## What I would improve nex
+testing does not currently occur. Their is also no backend, limiting the reusable
+functionality. In future iterations, the backend could save countries to user
+and make recommendations of the best
+time blocks to use PTO to maximize value.
