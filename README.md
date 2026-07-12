@@ -10,16 +10,20 @@ User needed accurate dates for holidays in order to plan their PTO.
 
 ## Core workflow
 
-the user comers to the site and it load the default country (Netherlands) and it shows their
-Holidays organized by Date
+The user comes to the site and it load the default country (Netherlands) and it shows their Holidays organized by Date
 
 ## Data model
+
+I am not sure.
 
 ## Technical choices
 
 ## Edge cases handled
 
-## How to run
+The edge cases are the various states of loading and if the Country of
+choice has no holidays in the API.
+
+## How to run ##
 
 ## How to test
 

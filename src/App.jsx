@@ -31,8 +31,6 @@ function App() {
     return "Holidays error: " + holidaysQuery.error.message;
   }
 
-  if (holidaysQuery.data.length === 0) { return "No Holidays for specified country found." }
-
   function formatDate(dateString) {
     const [year, month, day] = dateString.split("-");
 
@@ -65,14 +63,18 @@ function App() {
           onCountryChange={onCountryChange}
         />
       </label>
-      <div className={"holiday-list"}>
-        <ul>
-          {holidaysQuery.data.map((holiday) => (
-            <li key={holiday.id ?? holiday.startDate}>
-              {formatDate(holiday.startDate)} - {holiday.name?.[0]?.text ?? "Unnamed holiday"}
-            </li>
-          ))}
-        </ul>
+      <div className="holiday-list">
+        {holidaysQuery.data.length === 0 ? (
+          <p>No holidays found for the selected country.</p>
+        ) : (
+          <ul>
+            {holidaysQuery.data.map((holiday) => (
+              <li key={holiday.id ?? holiday.startDate}>
+                {formatDate(holiday.startDate)} - {holiday.name?.[0]?.text ?? "Unnamed holiday"}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
